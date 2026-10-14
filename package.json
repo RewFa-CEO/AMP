@@ -1,8 +1,8 @@
 {
   "name": "agent-memory-protocol",
   "version": "1.0.0",
-  "description": "跨智能体记忆协议",
   "description_en": "Cross-Agent Memory Protocol",
+  "description": "跨智能体记忆协议 - 插件化、即插即用的 AI Agent 记忆引擎",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "module": "dist/index.js",
@@ -55,19 +55,19 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ai-nurmamat/AMP.git"
+    "url": "git+ssh://git@github.com/RewFa-CEO/AMP.git"
   },
   "bugs": {
-    "url": "https://github.com/ai-nurmamat/AMP/issues"
+    "url": "https://github.com/RewFa-CEO/AMP/issues"
   },
-  "homepage": "https://github.com/ai-nurmamat/AMP#readme",
+  "homepage": "https://github.com/RewFa-CEO/AMP#readme",
   "license": "MIT",
   "author": "ai-nurmamat <nurmamat@ozluk.ai>",
   "contributors": [
     "Nurmamat <nurmamat@ozluk.ai>"
   ],
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.19.0"
   },
   "peerDependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0"

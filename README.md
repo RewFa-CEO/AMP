@@ -7,12 +7,12 @@
 [![Node.js](https://img.shields.io/badge/Node.js-%3E=18-green?style=flat-square)](https://nodejs.org/)
 [![Python](https://img.shields.io/badge/Python-3.8+-orange?style=flat-square)](https://python.org)
 [![AMP Version](https://img.shields.io/badge/AMP-1.0.0-brightgreen?style=flat-square)](python/setup.py)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/ai-nurmamat/AMP/ci.yml?style=flat-square)](.github/workflows/ci.yml)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/RewFa-CEO/AMP/ci.yml?style=flat-square)](.github/workflows/ci.yml)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![GitHub last commit](https://img.shields.io/github/last-commit/ai-nurmamat/AMP?style=flat-square)](https://github.com/ai-nurmamat/AMP/commits/main)
-[![GitHub repo size](https://img.shields.io/github/repo-size/ai-nurmamat/AMP?style=flat-square)](https://github.com/ai-nurmamat/AMP)
-[![Stars](https://img.shields.io/github/stars/ai-nurmamat/AMP?style=flat-square)](https://github.com/ai-nurmamat/AMP/stargazers)
-[![Forks](https://img.shields.io/github/forks/ai-nurmamat/AMP?style=flat-square)](https://github.com/ai-nurmamat/AMP/network)
+[![GitHub last commit](https://img.shields.io/github/last-commit/RewFa-CEO/AMP?style=flat-square)](https://github.com/RewFa-CEO/AMP/commits/main)
+[![GitHub repo size](https://img.shields.io/github/repo-size/RewFa-CEO/AMP?style=flat-square)](https://github.com/RewFa-CEO/AMP)
+[![Stars](https://img.shields.io/github/stars/RewFa-CEO/AMP?style=flat-square)](https://github.com/RewFa-CEO/AMP/stargazers)
+[![Forks](https://img.shields.io/github/forks/RewFa-CEO/AMP?style=flat-square)](https://github.com/RewFa-CEO/AMP/network)
 
 AMP (Agent Memory Protocol) is a plug-and-play memory engine for the LLM era. It features **"Pluggable Memory"** with true **Cross-Agent Shared Inheritance** — memory written by one Agent can be instantly used by another. It completely breaks data silos, enabling seamless memory consensus across different AI tools.
 
@@ -58,7 +58,7 @@ Run the full **memory write + semantic retrieval** flow with zero configuration!
 无需任何数据库配置，克隆后直接跑通**记忆写入+智能检索**的全流程！系统将自动为你创建持久化文件 `amp_memory.json`，确保断电不丢失。
 
 ```bash
-git clone https://github.com/ai-nurmamat/AMP.git
+git clone https://github.com/RewFa-CEO/AMP.git
 cd AMP
 npm install
 npm run build
