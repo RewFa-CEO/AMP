@@ -1,6 +1,7 @@
 # AMP (Agent Memory Protocol)
 
-> **Memory is the essence of evolution. / 记忆是进化的本质**
+> **One memory for every agent — Cursor, Claude, ChatGPT and your browser, all remembering the same you.**
+> **让每一个 AI Agent 共享同一段记忆 —— Cursor、Claude、ChatGPT 与你的浏览器，记住同一个你。**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square)](https://www.typescriptlang.org/)
@@ -115,6 +116,34 @@ npm run start
 This single process mounts both standard **Model Context Protocol (MCP)** endpoints (for Cursor, Claude Code) and **HTTP REST APIs** (port 3000, for legacy Agents). They both share the identical underlying persistence layer!
 该进程将同时提供 **MCP (Model Context Protocol)** 协议接口（供 Claude Code / Cursor 直接读取）以及暴露在 3000 端口的 **HTTP REST API**（供其它 Agent 如 OpenClaw 写入）。它们都在底层读写相同的 `amp_memory.json` / Redis 数据库！
 
+Connect any MCP client in 30 seconds / 30 秒接入任意 MCP 客户端:
+
+**Claude Desktop** — `claude_desktop_config.json`:
+```json
+{
+  "mcpServers": {
+    "amp": {
+      "command": "node",
+      "args": ["/absolute/path/to/AMP/dist/mcp/index.js"]
+    }
+  }
+}
+```
+
+**Cursor / Claude Code** — `.mcp.json`:
+```json
+{
+  "mcpServers": {
+    "amp": {
+      "command": "node",
+      "args": ["./dist/mcp/index.js"]
+    }
+  }
+}
+```
+
+Once connected, memories written by one client are instantly retrievable by every other client — that is the whole point of AMP. / 接入后，任一客户端写入的记忆对所有其他客户端即时可见——这正是 AMP 存在的意义。
+
 ---
 
 ## 🎯 Vision / 发展愿景
@@ -162,6 +191,25 @@ AMP 的最终形态是成为 **AI 时代的 HTTP**。就像网页通过 HTTP 获
 2. **企业团队 (Enterprise Teams)**：共享项目知识库，所有团队成员的 AI 助手都可以访问统一的业务上下文和编码规范（通过 scope 隔离按团队切分）。
 3. **AI 应用开发者 (AI Developers)**：通过暴露的 REST API / MCP 快速为自定义 Agent 增加长期记忆能力，无需从零开发复杂的记忆系统。
 4. **知识管理 (Knowledge Management)**：构建企业级知识库，支持按用户/会话维度的语义检索（基于子串+分词匹配，真正的向量检索见 Roadmap）。
+
+## ⚖️ AMP vs Other Memory Systems / 与其它记忆方案的对比
+
+The agent-memory track is hot (mem0 ~68k★, Letta ~25k★, Zep/Graphiti ~30k★ as of Oct 2026). They are all great — AMP attacks the problem from a different angle: **a shared memory hub every agent plugs into, not another SDK your app must embed.**
+Agent 记忆赛道正热（截至 2026-10：mem0 约 68k★、Letta 约 25k★、Zep/Graphiti 约 30k★）。它们都很优秀——AMP 从另一个角度切入：**做一个所有 Agent 都能插上的共享记忆中枢，而不是又一个需要嵌入应用的 SDK。**
+
+| | **AMP** | mem0 | Letta (MemGPT) | Zep / Graphiti |
+| --- | --- | --- | --- | --- |
+| Form / 形态 | Protocol + Hub (MCP & REST) | SDK + Cloud Platform | Stateful Agent Framework | Temporal Knowledge Graph Service |
+| Cross-agent by default / 跨 Agent 原生共享 | ✅ Core design / 核心设计 | Via platform / 经由平台 | Within Letta apps / 限 Letta 生态 | Via API |
+| Runs fully local / 纯本地可跑 | ✅ File / SQLite / Redis | Cloud or self-host | Self-host | Self-host |
+| MCP server built-in / 内置 MCP | ✅ | ✅ | ✅ | Partial |
+| Browser-side capture / 浏览器侧捕获 | ✅ Chrome extension | ❌ | ❌ | ❌ |
+| Vector retrieval / 向量检索 | 🔜 Roadmap | ✅ | ✅ | ✅ (graph) |
+| Languages / 语言实现 | TS + Python | Python + TS | Python | Python |
+
+> AMP is honest about what it does not have yet: no embedding-based vector retrieval (currently substring + token matching) and no graph layer. See the Roadmap below — stars should be earned by trust, not by hype. / AMP 对尚未具备的能力保持诚实：暂无 embedding 向量检索（当前为子串+分词匹配）与图记忆层，详见下方路线图——star 应该靠信任赢得，而不是靠营销。
+
+---
 
 ## 🗺️ Roadmap / 路线图
 
