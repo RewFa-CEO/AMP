@@ -53,6 +53,25 @@ Every memory entering AMP carries an `importance` score and `lastAccessedAt` tim
 
 ## 📦 Installation & Quick Start / 安装与快速体验
 
+### Install from npm / 从 npm 安装
+
+```bash
+npm install agent-memory-protocol
+```
+
+```typescript
+import { AMPCore, MemoryTier } from 'agent-memory-protocol';
+
+const amp = new AMPCore();
+await amp.store({
+  tier: MemoryTier.LONG_TERM,
+  scope: { userId: 'global-user' },
+  content: 'User prefers writing backend code in TypeScript.',
+  metadata: { importance: 0.9, tags: ['tech', 'preference'] }
+});
+const hits = await amp.retrieve({ query: 'code', limit: 3 });
+```
+
 ### One-line Local Demo / 一行命令跑通本地体验
 
 Run the full **memory write + semantic retrieval** flow with zero configuration! The system will automatically create a persistent `amp_memory.json` file for you.
@@ -118,19 +137,19 @@ This single process mounts both standard **Model Context Protocol (MCP)** endpoi
 
 Connect any MCP client in 30 seconds / 30 秒接入任意 MCP 客户端:
 
-**Claude Desktop** — `claude_desktop_config.json`:
+**Claude Desktop** — `claude_desktop_config.json` (no clone needed / 无需克隆仓库):
 ```json
 {
   "mcpServers": {
     "amp": {
-      "command": "node",
-      "args": ["/absolute/path/to/AMP/dist/mcp/index.js"]
+      "command": "npx",
+      "args": ["-y", "agent-memory-protocol"]
     }
   }
 }
 ```
 
-**Cursor / Claude Code** — `.mcp.json`:
+**Cursor / Claude Code** — `.mcp.json` (from a local clone / 本地克隆方式):
 ```json
 {
   "mcpServers": {

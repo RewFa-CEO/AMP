@@ -1,6 +1,6 @@
 {
   "name": "agent-memory-protocol",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description_en": "Cross-Agent Memory Protocol",
   "description": "跨智能体记忆协议 - 插件化、即插即用的 AI Agent 记忆引擎",
   "main": "dist/index.js",
@@ -8,7 +8,7 @@
   "module": "dist/index.js",
   "type": "module",
   "bin": {
-    "amp-server": "./dist/mcp/index.js"
+    "amp-server": "dist/mcp/index.js"
   },
   "exports": {
     ".": {
