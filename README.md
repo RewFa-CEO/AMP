@@ -3,6 +3,8 @@
 > **One memory for every agent — Cursor, Claude, ChatGPT and your browser, all remembering the same you.**
 > **让每一个 AI Agent 共享同一段记忆 —— Cursor、Claude、ChatGPT 与你的浏览器，记住同一个你。**
 
+<p align="center"><img src="docs/demo.gif" alt="AMP demo: write a memory in one agent, retrieve it in another" width="720"></p>
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E=18-green?style=flat-square)](https://nodejs.org/)
