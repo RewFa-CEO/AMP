@@ -7,7 +7,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square)](https://www.typescriptlang.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-%3E=18-green?style=flat-square)](https://nodejs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-%3E=20.19-green?style=flat-square)](https://nodejs.org/)
 [![Python](https://img.shields.io/badge/Python-3.8+-orange?style=flat-square)](https://python.org)
 [![AMP Version](https://img.shields.io/badge/AMP-1.0.0-brightgreen?style=flat-square)](python/setup.py)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/RewFa-CEO/AMP/ci.yml?style=flat-square)](.github/workflows/ci.yml)
